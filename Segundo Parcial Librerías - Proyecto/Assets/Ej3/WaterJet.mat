@@ -22,7 +22,15 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _TextureSample0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _ColorIntensity: 0.7322191
@@ -31,10 +39,13 @@ Material:
     - _Float0: 1.01
     - _Float1: 0.1
     - _Intensity: 0.15
+    - _MovementFalloff: 3.41
+    - _MovementOffset: -0.73
     - _NoiseScale: 1
     - _OffSet: -1
     - _Speed: 3
     - _TessValue: 32
     - __dirty: 0
+    - _frecuencia: 2
     m_Colors: []
   m_BuildTextureStacks: []
