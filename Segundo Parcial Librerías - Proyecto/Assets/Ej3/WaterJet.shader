@@ -63,17 +63,29 @@ Shader "WaterJet"
 
 		void vertexDataFunc( inout appdata_full v )
 		{
+<<<<<<< HEAD
 			float mulTime69 = _Time.y * 0.5;
 			float2 panner68 = ( mulTime69 * float2( 1,1 ) + v.texcoord.xy);
 			float simplePerlin2D67 = snoise( panner68*2.0 );
 			simplePerlin2D67 = simplePerlin2D67*0.5 + 0.5;
 			v.vertex.xyz += ( simplePerlin2D67 * float3(0.1,0.1,0) );
+=======
+			float2 temp_cast_0 = (_Time.y).xx;
+			float2 uv_TexCoord26 = v.texcoord.xy + temp_cast_0;
+			float simplePerlin2D28 = snoise( uv_TexCoord26 );
+			simplePerlin2D28 = simplePerlin2D28*0.5 + 0.5;
+			v.vertex.xyz += ( simplePerlin2D28 * float3(0.1,0,0.1) );
+>>>>>>> 41bfa8387fda2e0dbbb3779a8b0d408a93be6204
 		}
 
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
 			float4 color22 = IsGammaSpace() ? float4(0.06052472,0.6981132,0,0) : float4(0.0049501,0.4453062,0,0);
+<<<<<<< HEAD
 			o.Emission = color22.rgb;
+=======
+			o.Albedo = color22.rgb;
+>>>>>>> 41bfa8387fda2e0dbbb3779a8b0d408a93be6204
 			o.Alpha = 1;
 		}
 
@@ -84,6 +96,7 @@ Shader "WaterJet"
 }
 /*ASEBEGIN
 Version=17200
+<<<<<<< HEAD
 0;466;1054;213;607.071;-166.3637;1;True;False
 Node;AmplifyShaderEditor.TextureCoordinatesNode;51;-1080.661,-74.11293;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleTimeNode;69;-891.1862,83.53664;Inherit;False;1;0;FLOAT;0.5;False;1;FLOAT;0
@@ -103,3 +116,26 @@ WireConnection;0;2;22;0
 WireConnection;0;11;70;0
 ASEEND*/
 //CHKSM=2A5B2725B42848FD63C0B2F132955FF70DD1434D
+=======
+0;371;1465;620;1855.678;47.08895;1.6;True;True
+Node;AmplifyShaderEditor.RangedFloatNode;24;-997.1391,518.3268;Inherit;True;Constant;_Float1;Float 1;4;0;Create;True;0;0;False;0;1;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleTimeNode;25;-808.0447,535.8076;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.TextureCoordinatesNode;26;-587.9388,477.9268;Inherit;True;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.NoiseGeneratorNode;28;-279.8114,473.5436;Inherit;True;Simplex2D;True;False;2;0;FLOAT2;0,0;False;1;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.Vector3Node;30;-37.77854,588.853;Inherit;False;Constant;_Vector0;Vector 0;2;0;Create;True;0;0;False;0;0.1,0,0.1;0,0,0;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
+Node;AmplifyShaderEditor.ColorNode;22;-408.5403,-200.7759;Inherit;False;Constant;_Color0;Color 0;6;0;Create;True;0;0;False;0;0.06052472,0.6981132,0,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.NormalVertexDataNode;17;-984.079,264.3913;Inherit;False;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;29;5.421478,346.9532;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.PosVertexDataNode;1;-1000.737,-26.99166;Inherit;False;0;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.NoiseGeneratorNode;11;-1009.793,139.7044;Inherit;False;Simplex3D;False;False;2;0;FLOAT3;0,0,0;False;1;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;153.5292,-36.58622;Float;False;True;6;ASEMaterialInspector;0;0;Standard;WaterJet;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Opaque;0.5;True;True;0;False;Opaque;;Geometry;All;14;all;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;True;1;32;10;25;False;0.5;True;0;0;False;-1;0;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;0;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+WireConnection;25;0;24;0
+WireConnection;26;1;25;0
+WireConnection;28;0;26;0
+WireConnection;29;0;28;0
+WireConnection;29;1;30;0
+WireConnection;0;0;22;0
+WireConnection;0;11;29;0
+ASEEND*/
+//CHKSM=31DCD8FAC6C8B27D124167B8013E82791E2BDEA2
+>>>>>>> 41bfa8387fda2e0dbbb3779a8b0d408a93be6204
